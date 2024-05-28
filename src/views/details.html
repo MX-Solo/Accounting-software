@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="./../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-light bg-light justify-content-between">
+      <div class="btn-group">
+        <button type="button" class="btn btn-success" id="print">Print</button>
+        <button type="button" class="btn btn-secondary" id="printToPDF">Print To PDF</button>
+      </div>
+    </nav>
+    <h3>Your factor</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">title</th>
+          <th scope="col">price</th>
+          <th scope="col">type</th>
+        </tr>
+      </thead>
+      <tbody id="show-data">
+        <tr>
+          <th scope="row">-</th>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      // You can also require other files to run in this process
+      require('./../js/details.renderer.js')
+    </script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="./../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  </head>
+  <body>
+
+
+    
+  <div class="modal fade" id="paymentAndReceiveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Form add Row</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">title:</label>
+              <input type="text" class="form-control" name="title">
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">Price:</label>
+              <input type="number" class="form-control" name="price">
+            </div>
+            <div class="form-group">
+                <label for="message-text" class="col-form-label">Type:</label>
+                <select name="type" class="form-control">
+                  <option value="payment">payment</option>
+                  <option value="receive">receive</option>
+                </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="add-row">Add Row</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="updateAccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Form update Row</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <input type="hidden" name="id">
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">title:</label>
+              <input type="text" class="form-control" name="title">
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">Price:</label>
+              <input type="number" class="form-control" name="price">
+            </div>
+            <div class="form-group">
+                <label for="message-text" class="col-form-label">Type:</label>
+                <select name="type" class="form-control">
+                  <option value="payment">payment</option>
+                  <option value="receive">receive</option>
+                </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="update-row">Update Row</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <nav class="navbar navbar-light bg-light justify-content-between">
+      <div class="btn-group">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#paymentAndReceiveModal">Payment</button>
+        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#paymentAndReceiveModal">Receive</button>
+      </div>
+      <form class="form-inline" id="search">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </nav>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">title</th>
+          <th scope="col">price</th>
+          <th scope="col">type</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead>
+      <tbody id="show-data">
+        <tr>
+          <th scope="row">-</th>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      // You can also require other files to run in this process
+      require('./../js/index.renderer.js')
+    </script>
+  </body>
+</html>
